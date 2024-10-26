@@ -1,13 +1,26 @@
+<html>
+<head>
 <script language="JavaScript">
-<!--hide
-var password";
-var pass1="738578";
-password=prompt('Enter Password To View Page',' ');
-if (password==pass1)
-alert('Correct password, click OK to enter.');
-else
-{
-window.location="https://www.powerhouse1011.github.io/home.html";
+function LogIn() {
+    var password1 = "738578";
+    var password2 = "freesongs";
+    var userInput = prompt("Enter password:", "");
+
+    if (userInput === password1) {
+        window.location = "http://powerhouse1011.github.io/home"; // Redirects for password1
+    } else if (userInput === password2) {
+        window.location = "http://example2.com"; // Redirects for password2
+    } else {
+        window.location = "http://example3.com"; // Redirects if the password is incorrect
+    }
 }
-//-->
-</script>
+</script> 
+</head>
+<body>
+<center>
+    <form>
+        <input type="button" value="Enter Password" onClick="LogIn()">
+    </form>
+</center>
+</body>
+</html>
