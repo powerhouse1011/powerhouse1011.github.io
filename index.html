@@ -1,13 +1,29 @@
 <html>
 <head>
-    <title>Password Protected</title>
+<script language="JavaScript">
+function LogIn() {
+    var password1 = "738578";
+    var password2 = "freesongs";
+    var password3 = "PASSRAZZXONK";
+    var userInput = prompt("Enter password:", "");
+
+    if (userInput === password1) {
+        window.location = "https://powerhouse1011.github.io/home"; // Redirects for password1
+    } else if (userInput === password2) {
+        window.location = "https://powerhouse1011.github.io/freesongs"; // Redirects for password2
+    } else if (userInput === password3) {
+        window.location = "http://example2.com"; // Redirects for password2
+    } else {
+        window.location = "http://example3.com"; // Redirects if the password is incorrect
+    }
+}
+</script> 
 </head>
 <body>
-    <center>
-        <form action="validate.php" method="post">
-            <input type="password" name="password" placeholder="Enter password">
-            <input type="submit" value="Enter">
-        </form>
-    </center>
+<center>
+    <form>
+        <input type="button" value="Enter Password" onClick="LogIn()">
+    </form>
+</center>
 </body>
 </html>
