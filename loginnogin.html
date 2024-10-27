@@ -1,0 +1,35 @@
+<html>
+<head>
+<script language="JavaScript">
+function LogIn() {
+    var password1 = "738578";
+    var password2 = "freesongs";
+    var password3 = "PASSRAZZXONK";
+    var password4 = "8680KNOXGAAT";
+    var password5 = "2500XONKIKMU";
+    var userInput = prompt("Enter password:", "");
+
+    if (userInput === password1) {
+        window.location = "https://powerhouse1011.github.io/home"; // Redirects for password1
+    } else if (userInput === password2) {
+        window.location = "https://powerhouse1011.github.io/freesongs"; // Redirects for password2
+    } else if (userInput === password3) {
+        window.location = "https://powerhouse1011.github.io/Password_PASSRAZZXONK"; // Redirects for password3
+    } else if (userInput === password4) {
+        window.location = "https://powerhouse1011.github.io/gaminggam"; // Redirects for password4
+    } else if (userInput === password5) {
+        window.location = "https://powerhouse1011.github.io/songss"; // Redirects for password5
+    } else {
+        window.location = "ww.example.com"; // Redirects if the password is incorrect
+    }
+}
+</script> 
+</head>
+<body>
+<center>
+    <form>
+        <input type="button" value="Enter Password" onClick="LogIn()">
+    </form>
+</center>
+</body>
+</html>

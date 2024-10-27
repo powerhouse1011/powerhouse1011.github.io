@@ -1,35 +1,30 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<script language="JavaScript">
-function LogIn() {
-    var password1 = "738578";
-    var password2 = "freesongs";
-    var password3 = "PASSRAZZXONK";
-    var password4 = "8680KNOXGAAT";
-    var password5 = "2500XONKIKMU";
-    var userInput = prompt("Enter password:", "");
-
-    if (userInput === password1) {
-        window.location = "https://powerhouse1011.github.io/home"; // Redirects for password1
-    } else if (userInput === password2) {
-        window.location = "https://powerhouse1011.github.io/freesongs"; // Redirects for password2
-    } else if (userInput === password3) {
-        window.location = "https://powerhouse1011.github.io/Password_PASSRAZZXONK"; // Redirects for password3
-    } else if (userInput === password4) {
-        window.location = "https://powerhouse1011.github.io/gaminggam"; // Redirects for password4
-    } else if (userInput === password5) {
-        window.location = "https://powerhouse1011.github.io/songss"; // Redirects for password5
-    } else {
-        window.location = "ww.example.com"; // Redirects if the password is incorrect
-    }
-}
-</script> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Sign Up / Sign In</title>
 </head>
 <body>
-<center>
-    <form>
-        <input type="button" value="Enter Password" onClick="LogIn()">
-    </form>
-</center>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form id="signupForm">
+            <input type="text" id="signupUsername" placeholder="Username" required>
+            <input type="password" id="signupPassword" placeholder="Password" required>
+            <button type="submit">Sign Up</button>
+        </form>
+
+        <h2>Sign In</h2>
+        <form id="signinForm">
+            <input type="text" id="signinUsername" placeholder="Username" required>
+            <input type="password" id="signinPassword" placeholder="Password" required>
+            <button type="submit">Sign In</button>
+        </form>
+
+        <div id="message"></div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
