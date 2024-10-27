@@ -46,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Display an error message if the password is incorrect
         if (isset($errorMessage)) {
             echo "<p class='error'>$errorMessage</p>";
-            echo '<p><a href="login.html">Go back to Login</a></p>';
+            echo '<p><a href="index.html">Go back to Login</a></p>';
         }
         ?>
     </div>
