@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
 <body style="background-color: #ADD8E6;">
-<!DOCTYPE html>
-<html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
@@ -38,17 +36,37 @@ body {
   color: white;
 }
 
+.topnav .search-container {
+  float: right;
+}
+
 .topnav input[type=text] {
+  padding: 6px;
+  margin-top: 8px;
+  font-size: 17px;
+  border: none;
+}
+
+.topnav .search-container button {
   float: right;
   padding: 6px;
   margin-top: 8px;
   margin-right: 16px;
-  border: none;
+  background: #ddd;
   font-size: 17px;
+  border: none;
+  cursor: pointer;
+}
+
+.topnav .search-container button:hover {
+  background: #ccc;
 }
 
 @media screen and (max-width: 600px) {
-  .topnav a, .topnav input[type=text] {
+  .topnav .search-container {
+    float: none;
+  }
+  .topnav a, .topnav input[type=text], .topnav .search-container button {
     float: none;
     display: block;
     text-align: left;
@@ -56,7 +74,6 @@ body {
     margin: 0;
     padding: 14px;
   }
-  
   .topnav input[type=text] {
     border: 1px solid #ccc;  
   }
@@ -69,18 +86,19 @@ body {
   <a class="active" href="#home">Home</a>
   <a href="#about">About</a>
   <a href="#contact">Contact</a>
-  <input type="text" placeholder="Search..">
+  <div class="search-container">
+    <form action="/action_page.php">
+      <input type="text" placeholder="Search.." name="search">
+      <button type="submit">Submit</button>
+    </form>
+  </div>
 </div>
 
 <div style="padding-left:16px">
   <h2>Responsive Search Bar</h2>
-  <p>Navigation bar with a search box inside of it.</p>
+  <p>Navigation bar with a search box and a submit button inside of it.</p>
   <p>Resize the browser window to see the responsive effect.</p>
-  <p>For more examples on how to add a submit button and icon inside the search bar, go back to the tutorial.</p>
 </div>
-
-</body>
-</html>
 
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/07oO1U722crtVcavi6frX6?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/60nZcImufyMA1MKQY3dcCH?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
