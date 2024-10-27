@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Login</title>
+    <title>Login Result</title>
     <style>
         body {
             display: flex;
@@ -11,17 +11,6 @@
             height: 100vh;
             font-family: Arial, sans-serif;
         }
-        .form-container {
-            text-align: center;
-        }
-        input[type="password"] {
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-        input[type="submit"] {
-            padding: 10px 20px;
-            cursor: pointer;
-        }
         .error {
             color: red;
         }
@@ -29,12 +18,6 @@
 </head>
 <body>
     <div class="form-container">
-        <form method="POST" action="">
-            <input type="password" name="password" placeholder="Enter Password" required>
-            <br>
-            <input type="submit" value="Submit">
-        </form>
-
         <?php
         if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Define passwords and their respective URLs
@@ -56,6 +39,7 @@
             } else {
                 // Show error message if password is incorrect
                 echo "<p class='error'>Incorrect password. Please try again.</p>";
+                echo '<p><a href="login.html">Go back to Login</a></p>';
             }
         }
         ?>
