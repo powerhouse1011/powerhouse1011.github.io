@@ -39,7 +39,7 @@
             } else {
                 // Show error message if password is incorrect
                 echo "<p class='error'>Incorrect password. Please try again.</p>";
-                echo '<p><a href="login.html">Go back to Login</a></p>';
+                echo '<p><a href="index.html">Go back to Login</a></p>';
             }
         }
         ?>
