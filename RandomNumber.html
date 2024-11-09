@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Number Generator</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input, button { font-size: 1.2em; padding: 10px; margin: 5px; }
+    </style>
+</head>
+<body>
+
+    <h1>Random Number Generator</h1>
+    <p>Enter a range (or leave blank for 1-100):</p>
+    
+    <input type="number" id="min" placeholder="Min" min="0">
+    <input type="number" id="max" placeholder="Max" min="0">
+    <button onclick="generateRandomNumber()">Generate Random Number</button>
+    
+    <p id="result"></p>
+
+    <script>
+        function generateRandomNumber() {
+            let min = parseInt(document.getElementById("min").value) || 1;
+            let max = parseInt(document.getElementById("max").value) || 100;
+            
+            if (min > max) {
+                document.getElementById("result").innerText = "Please make sure Min is less than Max.";
+                return;
+            }
+            
+            let randomNum = Math.floor(Math.random() * (max - min + 1)) + min;
+            document.getElementById("result").innerText = "Random Number: " + randomNum;
+        }
+    </script>
+
+</body>
+</html>

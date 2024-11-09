@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Scrambler</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin-top: 50px; }
+        input, button { font-size: 1.2em; padding: 10px; }
+    </style>
+</head>
+<body>
+
+    <h1>Word Scrambler</h1>
+    <p>Enter a word below to scramble it:</p>
+    
+    <input type="text" id="wordInput" placeholder="Enter a word">
+    <button onclick="scrambleWord()">Scramble</button>
+    
+    <p id="result"></p>
+
+    <script>
+        function scrambleWord() {
+            let word = document.getElementById("wordInput").value;
+            
+            if (word.length === 0) {
+                document.getElementById("result").innerText = "Please enter a word.";
+                return;
+            }
+            
+            let letters = word.split(''); // Split the word into an array of letters
+            for (let i = letters.length - 1; i > 0; i--) {
+                let j = Math.floor(Math.random() * (i + 1));
+                [letters[i], letters[j]] = [letters[j], letters[i]]; // Swap letters
+            }
+            let scrambledWord = letters.join(''); // Join letters back into a word
+            document.getElementById("result").innerText = "Scrambled Word: " + scrambledWord;
+        }
+    </script>
+
+</body>
+</html>

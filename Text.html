@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Texting App with Sign-In</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; background-color: #f0f0f0; }
+        #app-container { width: 90%; max-width: 400px; background: white; border-radius: 10px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); overflow: hidden; }
+        #login-screen, #chat-screen { padding: 20px; display: none; }
+        #chat-screen { display: none; flex-direction: column; }
+        #messages { height: 300px; overflow-y: auto; border: 1px solid #ddd; padding: 10px; border-radius: 5px; margin-bottom: 10px; background-color: #f9f9f9; }
+        .message { margin: 5px 0; padding: 8px 10px; border-radius: 10px; max-width: 75%; }
+        .sent { background-color: #d1e7dd; align-self: flex-end; text-align: right; }
+        .received { background-color: #f8d7da; align-self: flex-start; }
+        input, button { width: 100%; padding: 10px; font-size: 1em; margin-top: 5px; border-radius: 5px; }
+        button { background-color: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background-color: #0056b3; }
+    </style>
+</head>
+<body>
+
+<div id="app-container">
+    <!-- Login Screen -->
+    <div id="login-screen">
+        <h2>Sign In</h2>
+        <input type="text" id="username" placeholder="Username" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <button onclick="signIn()">Sign In</button>
+    </div>
+
+    <!-- Chat Screen -->
+    <div id="chat-screen">
+        <h2>Welcome, <span id="userDisplay"></span>!</h2>
+        <div id="messages"></div>
+        <input type="text" id="messageInput" placeholder="Type a message..." />
+        <button onclick="sendMessage()">Send</button>
+    </div>
+</div>
+
+<script>
+    // Simulated User Database (for demonstration only)
+    const users = [
+        { username: "user1", password: "password1" },
+        { username: "user2", password: "password2" }
+    ];
+
+    // Function to simulate sign-in
+    function signIn() {
+        const username = document.getElementById("username").value;
+        const password = document.getElementById("password").value;
+
+        // Check if username and password match a user in the "database"
+        const user = users.find(user => user.username === username && user.password === password);
+
+        if (user) {
+            // Show chat screen and hide login screen
+            document.getElementById("login-screen").style.display = "none";
+            document.getElementById("chat-screen").style.display = "flex";
+            document.getElementById("userDisplay").textContent = username;
+        } else {
+            alert("Invalid username or password.");
+        }
+    }
+
+    // Function to send a message
+    function sendMessage() {
+        const messageInput = document.getElementById("messageInput");
+        const messageText = messageInput.value.trim();
+
+        if (messageText !== "") {
+            // Display the sent message
+            const messagesDiv = document.getElementById("messages");
+            const messageElem = document.createElement("div");
+            messageElem.className = "message sent";
+            messageElem.textContent = messageText;
+            messagesDiv.appendChild(messageElem);
+
+            // Scroll to the bottom
+            messagesDiv.scrollTop = messagesDiv.scrollHeight;
+
+            // Clear the input field
+            messageInput.value = "";
+
+            // Simulate a received message (for demonstration only)
+            setTimeout(() => {
+                const receivedMessageElem = document.createElement("div");
+                receivedMessageElem.className = "message received";
+                receivedMessageElem.textContent = "This is a reply.";
+                messagesDiv.appendChild(receivedMessageElem);
+                messagesDiv.scrollTop = messagesDiv.scrollHeight;
+            }, 1000);
+        }
+    }
+</script>
+
+</body>
+</html>
